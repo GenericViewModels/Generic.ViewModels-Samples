@@ -18,7 +18,6 @@ namespace BooksApp_Windows
             // view-models
             services.AddTransient<BooksViewModel>();
             // services.AddTransient<BookDetailViewModel>();
-            // services.AddTransient<MainPageViewModel>();
 
             // services
             services.AddTransient<IItemsService<Book>, BooksService>();
@@ -34,9 +33,9 @@ namespace BooksApp_Windows
             services.AddLogging(builder =>
             {
 #if DEBUG
-            builder.AddDebug().SetMinimumLevel(LogLevel.Trace);
+                builder.AddDebug().SetMinimumLevel(LogLevel.Trace);
 #endif
-        });
+            });
 
             ServiceProvider = services.BuildServiceProvider();
         }
